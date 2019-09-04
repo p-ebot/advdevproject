@@ -21,7 +21,7 @@ podTemplate(
 
     // Checkout Source Code.
     stage('Checkout Source') {
-      checkout  scm 
+      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/p-ebot/advdev_homework_template.git']]])
     }
 
     // Build the Tasks Service
